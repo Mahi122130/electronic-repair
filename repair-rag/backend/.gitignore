@@ -1,0 +1,19 @@
+# Secrets & Environment variables
+.env
+.env.development
+.env.local
+.env.*.local
+
+# Python environment & cache
+__pycache__/
+*.pyc
+.venv/
+env/
+.pytest_cache/
+
+# Next.js build output & cache
+.next/
+out/
+build/
+node_modules/
+.DS_Store

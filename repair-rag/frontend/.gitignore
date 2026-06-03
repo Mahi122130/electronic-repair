@@ -1,0 +1,43 @@
+# ── DEPENDENCIES ─────────────────────────────────────────────────────────────
+node_modules/
+/.pnp
+.pnp.js
+
+# ── NEXT.JS BUILD AND CACHE OUTPUTS ──────────────────────────────────────────
+.next/
+out/
+dist/
+build/
+
+# ── ENVIRONMENT VARIABLES AND SECRETS (CRITICAL SECURITY) ────────────────────
+# Never commit your private Supabase, API, or Groq keys to GitHub
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ── SYSTEM AND OS FILES ──────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+desktop.ini
+
+# ── TESTING AND LOGS ─────────────────────────────────────────────────────────
+coverage/
+*.lcov
+.nyc_output
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ── IDE AND EDITORS ──────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
