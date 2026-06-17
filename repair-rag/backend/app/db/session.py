@@ -1,9 +1,15 @@
 from collections.abc import AsyncGenerator
+import ssl
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase
 from app.core.config import get_settings
 
 settings = get_settings()
+
+# Create SSL context for Supabase
+ssl_context = ssl.create_default_context()
+ssl_context.check_hostname = False
+ssl_context.verify_mode = ssl.CERT_NONE
 
 _engine = create_async_engine(
     settings.database_url,
@@ -11,8 +17,8 @@ _engine = create_async_engine(
     pool_size=5,
     max_overflow=10,
     pool_pre_ping=True,
-    # Disables prepared statement caching — required for Supabase pooler
     connect_args={
+        "ssl": ssl_context,
         "statement_cache_size": 0,
         "prepared_statement_cache_size": 0,
     },

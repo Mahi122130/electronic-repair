@@ -137,7 +137,6 @@ export default function SignUpPage() {
             <span className="text-sm text-muted-foreground">
               Already have an account?
             </span>
-            {/* Adjust this href to point to wherever your actual login page is hosted */}
             <Link href="/auth">
               <Button variant="ghost" size="sm" disabled={isLoading}>
                 Sign In
